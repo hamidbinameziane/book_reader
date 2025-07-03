@@ -11,7 +11,7 @@ app = FastAPI()
 # Mount the frontend directory to serve static files
 app.mount("/static", StaticFiles(directory="../frontend"), name="static")
 
-PDF_PATH = "/home/hba/Documents/book_reader/sample.pdf"
+PDF_PATH = "sample.pdf"
 POSITION_FILE = "./position.json"
 doc = fitz.open(PDF_PATH)
 
