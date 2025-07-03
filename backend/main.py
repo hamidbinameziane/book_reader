@@ -31,7 +31,7 @@ def save_position(page_index):
 
 @app.get("/")
 async def read_root():
-    return FileResponse('/home/hba/Documents/book_reader/frontend/index.html')
+    return FileResponse(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend", "index.html')))
 
 @app.get("/api/page/{page_number}")
 async def get_page(page_number: int):
