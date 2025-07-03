@@ -9,10 +9,10 @@ import json
 app = FastAPI()
 
 # Mount the frontend directory to serve static files
-app.mount("/static", StaticFiles(directory="../frontend"), name="static")
+app.mount("/static", StaticFiles(directory=os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend"))), name="static")
 
 PDF_PATH = "sample.pdf"
-POSITION_FILE = "./position.json"
+POSITION_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "position.json"))
 doc = fitz.open(PDF_PATH)
 
 def get_last_position():
